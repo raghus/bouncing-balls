@@ -12,6 +12,12 @@ body {
     font-size: 32px; /* Twice the original 16px */
     font-family: 'Rubik', sans-serif; /* Updated to Rubik */
     text-align: center; /* Center the timer text */
+    opacity: 0; /* Hide the timer initially */
+    transition: opacity 1s; /* Transition for showing the timer */
+}
+
+#timer.show {
+    opacity: 1; /* Show the timer when the 'show' class is added */
 }
 
 .counter-container {

@@ -1,8 +1,10 @@
 let balls = [];
 let boxWidth = 1200; // Increased width of the bounding box
 let boxHeight = 400; // Height of the bounding box
-let ballCount = 20; // Total number of balls
-let ballSpeed = 1;  // Reduced the speed to 1
+let ballCountOptions = [10, 30, 60];
+let ballCount = ballCountOptions[Math.floor(Math.random() * ballCountOptions.length)]; // Randomly select ballCount
+let ballSpeedOptions = [2, 4, 8];
+let ballSpeed = ballSpeedOptions[Math.floor(Math.random() * ballSpeedOptions.length)]; // Randomly select ballSpeed
 let redBalls = []; // Array to track red balls
 let greenBalls = []; // Array to track green balls
 
@@ -83,7 +85,10 @@ function draw() {
     // Check if all balls are red or green using 'every' method
     if (balls.every(ball => ball.isRed || ball.isGreen) && !allRed) {
         allRed = true;
-        setTimeout(noLoop, 200); // Stop the draw loop after 200 ms
+        setTimeout(() => {
+            noLoop();
+            showTimer(); // Show the timer with a transition
+        }, 200); // Stop the draw loop after 200 ms
     }
 
     // Update timer only if not all balls are red or green
@@ -93,6 +98,13 @@ function draw() {
 
     // Display counts of red, green, and black balls
     displayCounts();
+}
+
+function showTimer() {
+    let timerDiv = select('#timer');
+    if (timerDiv) {
+        timerDiv.addClass('show');
+    }
 }
 
 function displayCounts() {
@@ -108,9 +120,9 @@ function updateTimer() {
     let minutes = floor(totalSeconds / 60);
     let seconds = totalSeconds % 60;
     let timeString = nf(minutes, 2) + ":" + nf(seconds, 2);
-    let timerDiv = select('#timer');
-    if (timerDiv) {
-        timerDiv.html(timeString);
+    let timeSpan = select('#time');
+    if (timeSpan) {
+        timeSpan.html(timeString);
     }
 }
 
