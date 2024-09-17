@@ -4,19 +4,19 @@ body {
     flex-direction: column;
     align-items: center;
     height: 100vh;
-    font-family: 'Rubik', sans-serif; /* Updated to Rubik */
+    font-family: 'Roboto', sans-serif; /* Updated to Roboto */
 }
 
 h1 {
     font-size: 48px; /* Larger font size */
-    font-weight: bold; /* Make the font bold */
+    font-weight: 900; /* Set font weight to 900 */
     margin: 20px 0; /* Add some margin for spacing */
 }
 
 #timer {
     margin-top: 5px; /* Changed margin to top */
     font-size: 22px; /* Changed font size to 22px */
-    font-family: 'Rubik', sans-serif; /* Updated to Rubik */
+    font-family: 'Roboto', sans-serif; /* Updated to Roboto */
     text-align: center; /* Center the timer text */
     opacity: 0; /* Hide the timer initially */
     transition: opacity 1s; /* Transition for showing the timer */
@@ -41,7 +41,7 @@ h1 {
     align-items: center; /* Center text vertically */
     margin: 0 10px; /* Space between counters */
     color: white; /* Text color */
-    font-family: 'Rubik', sans-serif; /* Ensure counters use Rubik font */
+    font-family: 'Roboto', sans-serif; /* Ensure counters use Roboto font */
     font-size: 32px; /* Font size for the count (twice the original 16px) */
     font-weight: bold; /* Make the font bold */
 }

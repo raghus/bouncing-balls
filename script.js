@@ -141,7 +141,7 @@ function drawBox() {
 
 class Ball {
     constructor(type = 'black') { // Added parameter for ball type
-        this.diameter = 20; // Set diameter first to use in position calculations
+        this.diameter = 15; // Reduced diameter to make the balls smaller
         // Adjusted initial position to ensure balls stay entirely within the bounding box
         this.x = random(15 + this.diameter / 2, boxWidth + 5 - this.diameter / 2);
         this.y = random(15 + this.diameter / 2, boxHeight + 5 - this.diameter / 2);
