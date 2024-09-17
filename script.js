@@ -20,7 +20,8 @@ let greenCount = initialGreenCount;
 let blackCount = ballCount - (initialRedCount + initialGreenCount);
 
 function setup() {
-    createCanvas(boxWidth + 20, boxHeight + 40); // Increased height to accommodate timer
+    let canvas = createCanvas(boxWidth + 20, boxHeight + 40); // Increased height to accommodate timer
+    canvas.parent('canvas-container'); // Append canvas to the container
     
     // Initialize multiple red balls
     for (let i = 0; i < initialRedCount; i++) {
