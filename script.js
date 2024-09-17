@@ -96,10 +96,10 @@ function draw() {
 }
 
 function displayCounts() {
-    // Update the text content of each counter
-    select('.red-counter').html(`Red: ${redCount}`);
-    select('.green-counter').html(`Green: ${greenCount}`);
-    select('.black-counter').html(`Black: ${blackCount}`);
+    // Update the text content of each counter to show only the number
+    select('.red-counter').html(redCount);
+    select('.green-counter').html(greenCount);
+    select('.black-counter').html(blackCount);
 }
 
 function updateTimer() {

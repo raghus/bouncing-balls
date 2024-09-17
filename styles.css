@@ -30,7 +30,8 @@ body {
     margin: 0 10px; /* Space between counters */
     color: white; /* Text color */
     font-family: 'Rubik', sans-serif; /* Ensure counters use Rubik font */
-    font-size: 16px; /* Font size for the count */
+    font-size: 32px; /* Font size for the count (twice the original 16px) */
+    font-weight: bold; /* Make the font bold */
 }
 
 .red-counter {
