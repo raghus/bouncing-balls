@@ -1,6 +1,6 @@
 let balls = [];
-let boxWidth = 1200; // Increased width of the bounding box
-let boxHeight = 400; // Height of the bounding box
+let boxWidth = window.innerWidth * 0.9; // 80% of the window's width
+let boxHeight = window.innerHeight * 0.6; // 80% of the window's height
 let ballCountOptions = [10, 30, 60];
 let ballCount = ballCountOptions[Math.floor(Math.random() * ballCountOptions.length)]; // Randomly select ballCount
 let ballSpeedOptions = [2, 4, 8];
