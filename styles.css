@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+#timer {
+    margin-bottom: 5px;
+    font-size: 32px; /* Twice the original 16px */
+    font-family: 'Roboto', sans-serif;
+}
