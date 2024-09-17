@@ -1,16 +1,21 @@
 let balls = [];
-let boxWidth = 800;
-let boxHeight = 600;
-let ballCount = 20; // Total number of balls
-let ballSpeed = 2;  // Reduced the speed by half from 4 to 2
+let boxWidth = 600; // Reduced width of the bounding box
+let boxHeight = 400; // Reduced height of the bounding box
+let ballCount = 30; // Total number of balls
+let ballSpeed = 1;  // Reduced the speed to 1
 let redBalls = []; // Array to track red balls
 let greenBalls = []; // Array to track green balls
 
 let startTime; // Variable to store the start time
 let allRed = false; // New variable to track if all balls are red
 
-let initialRedCount = 2; // Number of initial red balls
-let initialGreenCount = 2; // Number of initial green balls
+let initialRedCount = 1; // Number of initial red balls
+let initialGreenCount = 1; // Number of initial green balls
+
+// Variables to keep track of counts
+let redCount = initialRedCount;
+let greenCount = initialGreenCount;
+let blackCount = ballCount - (initialRedCount + initialGreenCount);
 
 function setup() {
     createCanvas(boxWidth + 20, boxHeight + 40); // Increased height to accommodate timer
@@ -39,7 +44,7 @@ function setup() {
 
 function draw() {
     background(255);
-    drawBox();
+    drawBox(); // Draw the bounding box
     for (let ball of balls) {
         ball.move();
         ball.display();
@@ -54,6 +59,8 @@ function draw() {
                 ball.color = color(255, 0, 0);
                 ball.isRed = true;
                 newRedBalls.push(ball);
+                redCount++; // Increment red count
+                blackCount--; // Decrement black count
             }
         }
     }
@@ -66,6 +73,8 @@ function draw() {
                 ball.color = color(0, 255, 0);
                 ball.isGreen = true;
                 newGreenBalls.push(ball);
+                greenCount++; // Increment green count
+                blackCount--; // Decrement black count
             }
         }
     }
@@ -74,13 +83,23 @@ function draw() {
     // Check if all balls are red or green using 'every' method
     if (balls.every(ball => ball.isRed || ball.isGreen) && !allRed) {
         allRed = true;
-        noLoop(); // Stop the draw loop immediately
+        setTimeout(noLoop, 200); // Stop the draw loop after 200 ms
     }
 
     // Update timer only if not all balls are red or green
     if (!allRed) {
         updateTimer();
     }
+
+    // Display counts of red, green, and black balls
+    displayCounts();
+}
+
+function displayCounts() {
+    fill(0); // Set text color to black
+    textSize(16);
+    textAlign(LEFT);
+    text(`Red: ${redCount} | Green: ${greenCount} | Black: ${blackCount}`, 10, boxHeight + 30); // Display counts in a single line
 }
 
 function updateTimer() {
@@ -101,9 +120,10 @@ function isColliding(ball1, ball2) {
 }
 
 function drawBox() {
-    fill(255); // Keep the box color white
-    noStroke();
-    rect(5, 5, boxWidth + 10, boxHeight + 10);
+    noFill();
+    strokeWeight(1); // Set stroke weight to 1px
+    stroke(210, 210, 210); // Set stroke color to #d2d2d2
+    rect(5, 5, boxWidth + 10, boxHeight + 10); // Draw the bounding box
 }
 
 class Ball {
