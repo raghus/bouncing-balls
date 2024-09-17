@@ -1,7 +1,7 @@
 let balls = [];
 let boxWidth = 1200; // Increased width of the bounding box
 let boxHeight = 400; // Height of the bounding box
-let ballCount = 500; // Total number of balls
+let ballCount = 20; // Total number of balls
 let ballSpeed = 1;  // Reduced the speed to 1
 let redBalls = []; // Array to track red balls
 let greenBalls = []; // Array to track green balls
@@ -9,7 +9,7 @@ let greenBalls = []; // Array to track green balls
 let startTime; // Variable to store the start time
 let allRed = false; // New variable to track if all balls are red
 
-let initialRedCount = 4; // Number of initial red balls
+let initialRedCount = 2; // Number of initial red balls
 let initialGreenCount = 2; // Number of initial green balls
 
 // Variables to keep track of counts
@@ -96,10 +96,10 @@ function draw() {
 }
 
 function displayCounts() {
-    fill(0); // Set text color to black
-    textSize(16);
-    textAlign(LEFT);
-    text(`Red: ${redCount} | Green: ${greenCount} | Black: ${blackCount}`, 10, boxHeight + 30); // Display counts in a single line
+    // Update the text content of each counter
+    select('.red-counter').html(`Red: ${redCount}`);
+    select('.green-counter').html(`Green: ${greenCount}`);
+    select('.black-counter').html(`Black: ${blackCount}`);
 }
 
 function updateTimer() {
