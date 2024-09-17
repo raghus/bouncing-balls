@@ -10,7 +10,7 @@ body {
 h1 {
     font-size: 48px; /* Larger font size */
     font-weight: 900; /* Set font weight to 900 */
-    margin: 20px 0; /* Add some margin for spacing */
+    margin: 20px 0 5px 0; /* Add some margin for spacing, reduced bottom margin */
 }
 
 #timer {
