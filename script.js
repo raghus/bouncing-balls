@@ -1,9 +1,9 @@
 let balls = [];
 let boxWidth = window.innerWidth * 0.9; // 80% of the window's width
 let boxHeight = window.innerHeight * 0.6; // 80% of the window's height
-let ballCountOptions = [10, 30, 60];
+let ballCountOptions = [10, 20, 50, 100]; // Updated array
 let ballCount = ballCountOptions[Math.floor(Math.random() * ballCountOptions.length)]; // Randomly select ballCount
-let ballSpeedOptions = [2, 4, 8];
+let ballSpeedOptions = [2, 3, 5, 10]; // Updated array
 let ballSpeed = ballSpeedOptions[Math.floor(Math.random() * ballSpeedOptions.length)]; // Randomly select ballSpeed
 let redBalls = []; // Array to track red balls
 let greenBalls = []; // Array to track green balls
